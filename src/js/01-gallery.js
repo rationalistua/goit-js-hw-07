@@ -22,13 +22,12 @@ function createPictures(pictures) {
             </div>
             `
     }).join('');
-    }
-// console.log(createPictures(galleryItems))
+}
 
 
 function onPicturesContainerClick(event) {
     event.preventDefault();
-    
+
     if (event.target.nodeName !== "IMG") {
         return;
     }
@@ -36,15 +35,18 @@ function onPicturesContainerClick(event) {
     <div class="modal">
         <img src="${event.target.dataset.source}" width="800" height="600">
     </div>
-`)
+    `)
+
     instance.show();
 
     window.addEventListener('keydown', onCloseModal);
+
     function onCloseModal(event) {
-    if (event.code === "Escape") {
-        instance.close();
+        if (event.code === "Escape") {
+            instance.close();
+            window.removeEventListener('keydown', onCloseModal);
+        }
     }
-}
 }
 
 
