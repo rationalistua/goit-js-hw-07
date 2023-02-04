@@ -14,8 +14,5 @@ function createPictures(pictures) {
             `
     }).join('');
 }
-    
-// console.log(galleryItems);
-
 
 const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
